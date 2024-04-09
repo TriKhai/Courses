@@ -1,107 +1,125 @@
 #include <stdio.h>
-#define min(a, b) (a>b?b:a)
+#include <string.h>
+#include <malloc.h>
+#define MAX_N 100
+#define max(a, b) (a>b?a:b)
+#define min(a, b) (a<b?a:b)
+//#define swap(a, b) (a ^= b ^= a ^= b)
 
 typedef struct {
-	int GT, TL ,PA = 0;
-	float DG;
-	int soDVDuocChon;
-	char name[50];
-} DoVat;
+	int w, v, sl=0;
+	float dg;
+	char name[MAX_N];
+}Item;
 
-void ReadData(DoVat arr[], int *w, int *size) {
-	FILE *f;
-	f = fopen("CaiBalo1.txt", "r");
-	fscanf(f, "%d", w);
-	if(f==NULL) {
-		printf("Loi mo file!\n");
-		return;
+typedef struct {
+	Item Items[MAX_N];
+	int W, n;
+}Balo;
+
+void swap(Item *a, Item *b) {
+	Item tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+// Bubble Sort
+void Sort(Balo *Bl) {
+	int n = Bl->n;
+	for(int i=0; i<n-1; i++) {
+		for(int j=n-1; j>=i+1; j--) {
+			if(Bl->Items[j].dg > Bl->Items[j-1].dg) {
+				swap(&Bl->Items[j], &Bl->Items[j-1]);
+			}
+		}
 	}
-	int i=0;
+}
+
+void ReadFile(Balo *Bl) {
+	FILE *f = fopen("CaiBaLo1.txt", "r");
+	fscanf(f, "%d", &Bl->W);
+	int i = 0;
 	while(!feof(f)) {
-		fscanf(f, "%d%d%[^\n]", &arr[i].TL, &arr[i].GT, &arr[i].name);
-		arr[i].DG = (float)arr[i].GT/arr[i].TL;
+		fscanf(f, "%d%d%[^\n]", &Bl->Items[i].w, 
+		&Bl->Items[i].v, &Bl->Items[i].name);
+		Bl->Items[i].dg = (float)Bl->Items[i].v / Bl->Items[i].w;
 		i++;
 	}
-	*size = i;
+	Bl->n=i;	
 	fclose(f);
 }
 
-void printData(DoVat arr[], int size) {
-	for(int i=0; i<size; i++) {
-		printf("%d %d %s %d %.2f\n", arr[i].TL, arr[i].GT, arr[i].name, arr[i].PA, arr[i].DG);
-	}
+void printInput(Balo *Bl) {
+	int i = 0;
+	int n = Bl->n;
+	printf("\n[%d-%d]\n", Bl->n, Bl->W);
+	printf("+----+----+-------------------+-----+\n");
+	printf("| gi | vi |       name        | dg  |\n");
+	printf("|----+----+-------------------+-----|\n");
+	while(i < n) {
+		printf("|%3d |%3d |%-18s |%3.2f |\n", Bl->Items[i].w, 
+		Bl->Items[i].v, Bl->Items[i].name, Bl->Items[i].dg);
+		i++;
+	}	
+	printf("+----+----+-------------------+-----+\n");
 }
 
-void TaoNutGoc(float W, float *TGTConLai, float *TGT, float *CT, float *GiaLNTT, float DonGiaLonNhat) {
-	*TGT = 	0.0;
-	*TGTConLai = W;
-	*CT = (*TGTConLai)*(DonGiaLonNhat);
-	*GiaLNTT = 0.0;
-}
-
-void CapNhatGTLNTT(int x[], float *TGT, float *GiaLNTT, DoVat *dsdv, int n) {
-	int i;
-	if(*GiaLNTT < *TGT) {
-		*GiaLNTT  = *TGT;
-		for(i=0; i<n; i++) {
-			dsdv[i].soDVDuocChon = x[i];
-		}
-	}
-}
-
-void NhanhCan(float *TGT, float *CT, float *TLConLai, float *GiaLNTT, int x[], int i, DoVat *dsdv, int n) {
-	int j;
-	int soDoVatLonNhatCoTheChon = *TLConLai/dsdv[i].TL;
-	printf("%d", soDoVatLonNhatCoTheChon);
-	for(j=soDoVatLonNhatCoTheChon; j>=0; j--) {
-		*TGT = *TGT + j*dsdv[i].GT;
-		*TLConLai -= j*dsdv[i].TL;
-		if(*GiaLNTT < *CT) {
+void NhanhCan(Balo *Bl, int x[], int pTGT, int i, float *GTLNTT, int W) {
+	int n = Bl->n;
+	for(int j=W/Bl->Items[i].w; j>=0; j--) {
+		float TGT, Wconlai, CT;
+		TGT = pTGT + j*Bl->Items[i].v;//TGT
+		Wconlai = W - j*Bl->Items[i].w;//W con lai
+		CT = TGT + Wconlai*Bl->Items[i+1].dg;//can tren
+		if(CT > *GTLNTT) {
 			x[i]=j;
-			if(i==n-1 || *TLConLai==0.0)
-				CapNhatGTLNTT(x, TGT, GiaLNTT, dsdv, n);
-			else 
-				NhanhCan(TGT, CT, TLConLai, GiaLNTT, x, i, dsdv, n);
-		}
-		x[i]=0;
-		*TGT-=j*dsdv[i].GT;
-		*TLConLai+=j*dsdv[i].TL;
-	}
-}
-
-void swap(DoVat *x, DoVat *y) {
-	DoVat temp = *x;
-	*x = *y;
-	*y = temp;
-}
-
-void BubleSort(DoVat arr[], int size) {
-	for(int i=0; i<size-1; i++) {
-		for(int j=size-1; j>=i+1; j--) {
-			if(arr[j].DG > arr[j-1].DG) {
-				swap(&arr[j], &arr[j-1]);
+			if((i==n-1 || Wconlai == 0)&&TGT>*GTLNTT) {
+				*GTLNTT = TGT;
+				for(int k=0; k<n; k++) {
+					Bl->Items[k].sl = x[k];
+				}
+			}
+			else {
+				NhanhCan(Bl, x, TGT, i+1, GTLNTT, Wconlai);
 			}
 		}
-	} 
+		x[i]=0;
+	}
 }
 
-void printNhanhCan(DoVat *dsdv, int size) {
-	for(int i=0; i<size; i++) {
-		printf("%d\n", dsdv[i].soDVDuocChon);
-	}
+void printChart (Balo *B){
+    int total_val = 0, total_weight = 0;
+    int n = B->n, W = B->W;
+    printf("+---+---------------------+-----------+-------+-------+---------+\n");
+	printf("|%-3s|%-21s|%-11s|%-7s|%-7s|%-9s|\n", "STT", "     Ten do vat", "Trong luong", "Gia tri", "Don gia","Phuong an");
+	printf("|---+---------------------+-----------+-------+-------+---------+\n");
+	for(int i = 0, k = 1; i < n; i++){        
+        printf("| %-2d| %-20s|%11d|%7d|%7.2f|%9d|\n", k++
+		, B->Items[i].name, B->Items[i].w, B->Items[i].v, 
+		B->Items[i].dg, B->Items[i].sl);
+        total_val += B->Items[i].v*B->Items[i].sl;
+        total_weight += B->Items[i].w*B->Items[i].sl;
+	}	
+	printf("+---+---------------------+-----------+-------+-------+---------+\n");	
+	printf("Phuong an (theo thu tu DG giam dan): X(");
+	for(int i=0; i<n-1; i++){
+		printf("%d,", B->Items[i].sl);
+	}	
+	printf("%d)\n", B->Items[n-1].sl);
+	printf("Trong luong cua ba lo = %5d\n", W);
+    printf("Tong trong luong      = %5d\n", total_weight);
+    printf("Tong gia tri          = %5d\n", total_val);
 }
 
 int main() {
-	DoVat dsdv[50];
-	int size, w;
-	float TGT, TLConLai, GiaLNTT, CT;
-	ReadData(dsdv, &w, &size);
-	int x[size];
-//	printData(dsdv, size);
-	BubleSort(dsdv, size);
-//	printData(dsdv, size);
-	TaoNutGoc(w, &TLConLai, &TGT, &CT, &GiaLNTT, dsdv[0].DG);
-	NhanhCan(&TGT, &CT, &TLConLai, &GiaLNTT, x, 0, dsdv, size);
-	printNhanhCan(dsdv, size);
+	Balo Bl;
+	ReadFile(&Bl);
+	printInput(&Bl);
+	Sort(&Bl);
+	printInput(&Bl);
+	float GTLNTT = 0;
+	int x[MAX_N];
+	NhanhCan(&Bl, x, 0, 0, &GTLNTT, Bl.W);
+	printChart(&Bl);
 	return 0;
 }

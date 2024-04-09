@@ -1,6 +1,6 @@
 # TSP - BRANCH AND BOUND
 
-1. Declaration
+#### Declaration
 ```mermaid
 graph LR
 A[Graph] --> B[Edge A_2chieu] 
