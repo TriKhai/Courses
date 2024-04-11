@@ -46,7 +46,7 @@
 | B9 |    |    |    |    |    |    |    |    | **10** | **12** |
 | KQ |  **2** |  **2** |  **3** |  **5** |  **6** |  **9** |  **9** | **10** | **10** | **12** |
 
-#### Ngoài lề: Không phụ thuộc dữ liệu nhập bắt buộc duyệt hết O(n^2).
+#### Ngoài lề: Không phụ thuộc tình trạng của mảng ban đầu O(n^2).
 
 ###
 ### Insertion Sort:
@@ -75,6 +75,33 @@
 | B8 |  2 |  2 |  5 |  6 |  9 |  **9** | 10 | 10 | 12 |    |
 | B9 |  2 |  2 |  **3** |  5 |  6 |  9 |  9 | 10 | 10 | 12 |
 | KQ |  **2** |  **2** |  **3** |  **5** |  **6** |  **9** |  **9** | **10** | **10** | **12** |
+#### Ngoài lề: Phụ thuộc tình trạng của mảng ban đầu (Tại while có thể O(1)).
+###
+### Buble Sort:
+- Ý tưởng: 
+##### Xuất phát từ cuối (or đầu) mảng, đổi chổ các cặp phần tử kế cận để đưa phần tử nhỏ(lớn) hơn trong cặp phần tử đó về vị trí đứng đầu(cuối) mảng hiện hành. Sau đó sẽ không xét đến nó ở vị trí tiếp theo, do vậy ở lần xử lý thứ i sẽ có vị trí đầu mảng là i. Lặp lại xử lý trên cho đến khi không còn cặp phần tử nào để xét. 
+
+- Giải thuật:
+##### **B1:** Xét a[j] (j giảm từ n-1 đến 1), so sanh khóa của a[j] với khóa của a[j-1]. Nếu a[j] < a[j-1] thì đổi a[j] và a[j-1]. Sau bước này thì a[0] có khóa nhỏ nhất.
+##### **B2:** Xét a[j] (j giảm từ n-1 đến 2), so sanh khóa của a[j] với khóa của a[j-1]. Nếu a[j] < a[j-1] thì đổi a[j] và a[j-1]. Sau bước này thì a[1] có khóa nhỏ thứ 2.
+##### ....
+##### **Bn-1:** Mảng đã được sắp xếp.
+- Minh hoạ: 
+#### Sắp Xếp giảm dần dãy: 5 6 2 2 10 12 9 10 9 3
+|    | a0 | a1 | a2 | a3 | a4 | a5 | a6 | a7 | a8 | a9 |
+|----|----|----|----|----|----|----|----|----|----|----|
+| BĐ |  5 |  6 |  2 |  2 | 10 | 12 |  9 | 10 |  9 |  3 |
+| B1 |  **2** |  5 |  6 |  2 |  3 | 10 | 12 |  9 | 10 |  9 |
+| B2 |    |  **2** |  5 |  6 |  3 |  9 | 10 | 12 |  9 | 10 |
+| B3 |    |    |  **3** |  5 |  6 |  9 |  9 | 10 | 12 | 10 |
+| B4 |    |    |    |  **5** |  6 |  9 |  9 | 10 | 10 | 12 |
+| B5 |    |    |    |    |  **6** |  9 |  9 | 10 | 10 | 12 |
+| B6 |    |    |    |    |    |  **9** |  9 | 10 | 10 | 12 |
+| B7 |    |    |    |    |    |    |  **9** | 10 | 10 | 12 |
+| B8 |    |    |    |    |    |    |    | **10** | 10 | 12 |
+| B9 |    |    |    |    |    |    |    |    | **10** | 12 |
+| KQ |  **2** |  **2** |  **3** |  **5** |  **6** |  **9** |  **9** | **10** | **10** | **12** |
+#### Ngoài lề: Không phụ thuộc tình trạng của mảng ban đầu O(n^2).
 
 # CHAPTER 3:
 
