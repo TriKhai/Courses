@@ -48,22 +48,33 @@
 
 #### Ngoài lề: Không phụ thuộc dữ liệu nhập bắt buộc duyệt hết O(n^2).
 
+###
 ### Insertion Sort:
+- Ý tưởng: 
+##### Bắt chước xếp các quân bài của những người chơi bài. Muốn sắp xếp một bộ bài theo tuần tự, người chơi bài rút lần lượt từ quân bài thứ 2, so với các quân đứng ở trước nó để chèn vào vị trí thích hợp.
+#### Xét mảng gồm k phần tử đầu. Với i=1, mảng gồm một phần tử đã được sắp. Giả sử trong mảng i-1 phần tử đầu đã được sắp, để sắp xếp một phần tử ta tìm vị trí thích hợp của nó trong mảng. Vị trí thích hợp đó là đứng trước phần tử lớn hơn nó và sau phần tử nhỏ hơn hoặc bằng nó.
 
+- Giải thuật:
+##### **B1:** Xen phần tử a[1] vào danh sách đã có thứ tự a[0] sao cho a[0], a[1] là danh sách có thứ tự.
+##### **B2:** Xen phần tử a[2] vào danh sách đã có thứ tự a[0], a[1] sao cho a[0], a[1], a[2] là danh sách có thứ tự.
+##### **Tổng quat bước i:** Xen phần tử a[i] vào danh sách đã có thứ tự a[0], a[1], a[2], ..., a[i-1] sao cho a[0], a[1], a[2], ..., a[i-1], a[i] là danh sách có thứ tự.
+##### **Bn-1:** Mảng đã được sắp xếp.
 
+- Minh họa
+#### Sắp Xếp giảm dần dãy: 5 6 2 2 10 12 9 10 9 3
 |    | a0 | a1 | a2 | a3 | a4 | a5 | a6 | a7 | a8 | a9 |
 |----|----|----|----|----|----|----|----|----|----|----|
 | BĐ |  5 |  6 |  2 |  2 | 10 | 12 |  9 | 10 |  9 |  3 |
-| B1 |  2 |  6 |  5 |  2 | 10 | 12 |  9 | 10 |  9 |  3 |
-| B2 |    |  2 |  5 |  6 | 10 | 12 |  9 | 10 |  9 |  3 |
-| B3 |    |    |  3 |  6 | 10 | 12 |  9 | 10 |  9 |  5 |
-| B4 |    |    |    |  5 | 10 | 12 |  9 | 10 |  9 |  6 |
-| B5 |    |    |    |    |  6 | 12 |  9 | 10 |  9 | 10 |
-| B6 |    |    |    |    |    |  9 | 12 | 10 |  9 | 10 |
-| B7 |    |    |    |    |    |    |  9 | 10 | 12 | 10 |
-| B8 |    |    |    |    |    |    |    | 10 | 12 | 10 |
-| B9 |    |    |    |    |    |    |    |    | 10 | 12 |
-| KQ |  2 |  2 |  3 |  5 |  6 |  9 |  9 | 10 | 10 | 12 |
+| B1 |  5 |  **6** |    |    |    |    |    |    |    |    |
+| B2 |  **2** |  5 |  6 |    |    |    |    |    |    |    |
+| B3 |  2 |  **2** |  5 |  6 |    |    |    |    |    |    |
+| B4 |  2 |  2 |  5 |  6 | **10** |    |    |    |    |    |
+| B5 |  2 |  2 |  5 |  6 | 10 | **12** |    |    |    |    |
+| B6 |  2 |  2 |  5 |  6 |  **9** | 10 | 12 |    |    |    |
+| B7 |  2 |  2 |  5 |  6 |  9 | 10 | **10** | 12 |    |    |
+| B8 |  2 |  2 |  5 |  6 |  9 |  **9** | 10 | 10 | 12 |    |
+| B9 |  2 |  2 |  **3** |  5 |  6 |  9 |  9 | 10 | 10 | 12 |
+| KQ |  **2** |  **2** |  **3** |  **5** |  **6** |  **9** |  **9** | **10** | **10** | **12** |
 
 # CHAPTER 3:
 
