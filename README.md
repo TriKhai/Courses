@@ -20,7 +20,7 @@
 
 
 # CHƯƠNG 2: SẮP XẾP
-## 1. Ý tưởng các thuật toán sắp xếp đơn giản O(n^2)
+## 1. Các thuật toán sắp xếp đơn giản O(n^2)
 ### Selection Sort:
 - Ý tưởng:
 ##### Chọn phần tử nhỏ nhất trong n phần tử ban đầu, đưa phần tử này về vị trí đúng là vị trí đầu tiên của mảng hiện hành. Sau đó không quan tấm đến nó nữa, xem mảng hiện hành chỉ còn n-1 phần tử của mảng ban đầu. Bắt đầu từ vị trí thứ 2, lặp lại quá trình trên cho mảng hiện hành đến khi chỉ còn 1 phần tử.
@@ -45,6 +45,25 @@
 | B8 |    |    |    |    |    |    |    | **10** | 12 | 10 |
 | B9 |    |    |    |    |    |    |    |    | **10** | **12** |
 | KQ |  **2** |  **2** |  **3** |  **5** |  **6** |  **9** |  **9** | **10** | **10** | **12** |
+
+#### Ngoài lề: Không phụ thuộc dữ liệu nhập bắt buộc duyệt hết O(n^2).
+
+### Insertion Sort:
+
+
+|    | a0 | a1 | a2 | a3 | a4 | a5 | a6 | a7 | a8 | a9 |
+|----|----|----|----|----|----|----|----|----|----|----|
+| BĐ |  5 |  6 |  2 |  2 | 10 | 12 |  9 | 10 |  9 |  3 |
+| B1 |  2 |  6 |  5 |  2 | 10 | 12 |  9 | 10 |  9 |  3 |
+| B2 |    |  2 |  5 |  6 | 10 | 12 |  9 | 10 |  9 |  3 |
+| B3 |    |    |  3 |  6 | 10 | 12 |  9 | 10 |  9 |  5 |
+| B4 |    |    |    |  5 | 10 | 12 |  9 | 10 |  9 |  6 |
+| B5 |    |    |    |    |  6 | 12 |  9 | 10 |  9 | 10 |
+| B6 |    |    |    |    |    |  9 | 12 | 10 |  9 | 10 |
+| B7 |    |    |    |    |    |    |  9 | 10 | 12 | 10 |
+| B8 |    |    |    |    |    |    |    | 10 | 12 | 10 |
+| B9 |    |    |    |    |    |    |    |    | 10 | 12 |
+| KQ |  2 |  2 |  3 |  5 |  6 |  9 |  9 | 10 | 10 | 12 |
 
 # CHAPTER 3:
 
