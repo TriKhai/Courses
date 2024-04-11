@@ -31,11 +31,11 @@
 ##### **Tổng quat bước i:** chọn phần tử có kháo nhỏ nhất trong n-i phần tử từ a[i] đến a[n-1] và hoán vị nó với a[i];
 ##### **Bn-1:** Mảng đã được sắp xếp.
 - Minh họa:
-|   |   |   |   |   |
-|---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+| STT | Họ và Tên | Tuổi | Giới tính |
+|-----|-----------|------|-----------|
+| 1   | John      | 25   | Nam       |
+| 2   | Mary      | 30   | Nữ        |
+| 3   | David     | 28   | Nam       |
 
 # CHAPTER 3:
 
