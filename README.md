@@ -17,7 +17,7 @@
 
 ## 3. Chương trinhg có đệ quy(Truy hồi/Tổng quát)
 - Thành lập phtrinh và tính độ phứt tạp
-
+<hr>
 
 # CHƯƠNG 2: SẮP XẾP
 ## 1. Các thuật toán sắp xếp đơn giản O(n^2)
@@ -48,7 +48,8 @@
 
 #### Ngoài lề: Không phụ thuộc tình trạng của mảng ban đầu O(n^2).
 
-###
+<br>
+
 ### Insertion Sort:
 - Ý tưởng: 
 ##### Bắt chước xếp các quân bài của những người chơi bài. Muốn sắp xếp một bộ bài theo tuần tự, người chơi bài rút lần lượt từ quân bài thứ 2, so với các quân đứng ở trước nó để chèn vào vị trí thích hợp.
@@ -76,7 +77,8 @@
 | B9 |  2 |  2 |  **3** |  5 |  6 |  9 |  9 | 10 | 10 | 12 |
 | KQ |  **2** |  **2** |  **3** |  **5** |  **6** |  **9** |  **9** | **10** | **10** | **12** |
 #### Ngoài lề: Phụ thuộc tình trạng của mảng ban đầu (Tại while có thể O(1)).
-###
+<br>
+
 ### Buble Sort:
 - Ý tưởng: 
 ##### Xuất phát từ cuối (or đầu) mảng, đổi chổ các cặp phần tử kế cận để đưa phần tử nhỏ(lớn) hơn trong cặp phần tử đó về vị trí đứng đầu(cuối) mảng hiện hành. Sau đó sẽ không xét đến nó ở vị trí tiếp theo, do vậy ở lần xử lý thứ i sẽ có vị trí đầu mảng là i. Lặp lại xử lý trên cho đến khi không còn cặp phần tử nào để xét. 
@@ -131,7 +133,8 @@
 ##### - Sắp xếp mảng a[k]...a[j] (đệ quy).
 ##### Đệ quy sẽ dừng khi không tìm thấy chốt.
 - Minh họa:
-####
+<br>
+
 ![feature-image](./assets/sort/quicksort.png)
 
 ### Quick sort biến thể
