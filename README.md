@@ -165,7 +165,7 @@
 ### Xóa mẫu tin
 #### Phương pháp:
 ##### a. Xen r:
-#####       (a)TH1: L còn chổ: Xen r vào vị trí đúng.
-#####       (a)TH2: L hết chổ: Xen r vào vị trí đúng.
+##### ------(a)TH1: L còn chổ: Xen r vào vị trí đúng.
+##### ------(a)TH2: L hết chổ: Xen r vào vị trí đúng.
 
 #### Minh họa
