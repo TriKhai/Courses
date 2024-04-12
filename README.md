@@ -141,7 +141,25 @@
 
 
 # CHƯƠNG 4: LƯU TRỮ NGOÀI
-## 1. Định nghĩa và tính chất của B-cây.
-### Định nghĩa
+## 1. Định nghĩa và tính chất của B-cây.(Balanced tree)
+### Định nghĩa: B-tree bậc m là `Cây tìm kiếm m phân cân bằng`.
+#### `m`: số con tối đa của nút trong.
+#### `b`: số mẫu tin tối đa của nút lá.
 
-### Tính chất
+### Tính chất(4):
+- Nút gốc hoặc là lá hoặc có ít nhất 2 nút con.
+- Mỗi nút trong có từ ceil(m/2) đến m nút con.
+- Các đường đi từ gốc đến lá có cùng độ dài.
+- Các khóa và cây con sắp xếp theo **cây tìm kiếm**
+
+## 2. Xen và xóa mẫu tin trong B-tree
+### Xen mẫu tin
+#### Phương pháp
+
+#### Minh họa
+<br>
+
+### Xóa mẫu tin
+#### Phương pháp
+
+#### Minh họa
