@@ -103,6 +103,27 @@
 | KQ |  **2** |  **2** |  **3** |  **5** |  **6** |  **9** |  **9** | **10** | **10** | **12** |
 #### Ngoài lề: Không phụ thuộc tình trạng của mảng ban đầu O(n^2).
 
+## 2. Các thuật toán sắp xếp phứt tạp O(nlogn)
+### Quick sort:
+- Ý tưởng: dùng "Chia để trị"
+##### **B1:** Chọn một phần tử khóa v làm phần tử chôt(pivot)
+##### **B2:** Phân hoạch dãy a[0]...a[n-1] thành 2 mảng con "bên trái" và "bên phải". Mảng con "bên trái" bao gồm các phần tử có khóa nhỏ hơn chốt. Mảng con "bên phải" bao gồm các phần tử có khóa lớn hơn hoặc bằng chốt.
+##### **B3:** Sau khi phân hoạch thành 2 mảng, thực hiện lại bước 2 ở từng mảng - chọn pivot ở từng mảng và tiếp tục phân chia thành các mảng nhỏ hơn, sắp xếp đến khi mảng được sắp xếp hoàn toàn (Mảng gồm 1 phần tử hoặc gồm nhiều phần tử có khóa bằng nhau thì đã có thứ tự).
+- Phương pháp chọn chốt (**o**):
+##### Chọn giá trị khóa lớn nhất trong hai phần tử có khóa khác nhau đầu tiên từ trái qua.
+##### Nếu mảng chỉ có 1 phần tử hoặc các phần tử có khóa bằng nhau thì không có chốt.
+##### `VD: 6 6 4 5 8 7 -> Chốt là 6 tại vị trí đầu.`
+##### `VD: 6 6 7 5 8 7 -> Chốt là 7 tại vị trí 3.`
+##### `VD: 6 6 6 6 6 6 -> Không có chốt do các phần tử có khóa bằng nhau.`
+##### `VD: 6           -> Không có chốt do mảng chỉ có một phần tử.`
+- Cách phân hoạch (**o**):
+##### Để phân hoạch mảng dùng 2 "con nháy" L và R, trong đó L đi từ bên trái và R đi từ bên phải
+##### Cho L chạy **sang phải** tới khi gặp phần tử có `khóa >= chôt`. 
+##### Cho R chạy **sang trái** tới khi gặp phần tử có `khóa < chôt`. 
+##### Tại chổ dừng của L và R: Nếu `L<R` thì hoán vị a[L] và a[R].
+##### Lặp lại quá trình dịch sang phải, sang trái của 2 "con nháy" L và R cho đến khi `L>R`.
+##### Khi đó L sẽ là điểm phân hoạch, cụ thể là a[L] là phần tử đầu tiên của mảng con "bên phải"
+
 # CHAPTER 3:
 
 
