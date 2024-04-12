@@ -140,8 +140,11 @@
 ### Quick sort biến thể
 ### Heap sort
 
+<hr>
+
 # CHAPTER 3:
 
+<hr>
 
 # CHƯƠNG 4: LƯU TRỮ NGOÀI
 ## 1. Định nghĩa và tính chất của B-cây.(Balanced tree)
@@ -157,26 +160,35 @@
 
 ## 2. Xen và xóa mẫu tin trong B-tree
 ### Xen mẫu tin
-#### Phương pháp
-
-#### Minh họa
-<br>
-
-### Xóa mẫu tin
-#### Phương pháp:
+#### > Phương pháp
+##### Tìm kiếm vị trí xen: Gốc -> P -> L
 ##### Xen r:
 ##### ------(L)TH1: L còn chổ: Xen r vào vị trí đúng.
 ##### ------(L)TH2: L hết chổ: 
 ##### ------------: - Cấp nút lá mới l'. 
-##### ------------: - Dời ceil(b/2) của L sang L'. 
+##### ------------: - Dời `ceil(b/2)` của L sang L'. 
 ##### ------------: - Xen r vào L hoặc L'. 
 ##### ------------: - Xen L' vào nút cha P.
 ##### -------------------: (P)TH1: Nếu P còn chổ: Xen L' vào vị trí đúng. 
 ##### -------------------: (P)TH2: Nếu P hết chổ:
 ##### -----------------------------: + Cấp nút trong mới P'.
-##### -----------------------------: + Dời ceild(m/2) nút lá cuối sang P'.
+##### -----------------------------: + Dời `ceild(m/2)` nút lá cuối sang P'.
 ##### -----------------------------: + Xen nút lá L' vào P hoặc P'.
 ##### -----------------------------: + Xen P' vào nút cha. => đệ quy tới khi nào oke thì thôi.
+##### ------------: Cập nhật lại khóa B cây
 
+#### > Minh họa
+<br>
 
-#### Minh họa
+### Xóa mẫu tin
+#### > Phương pháp
+##### Tìm kiếm vị trí xóa: Gốc -> P -> L
+##### Xóa r:
+##### ------(L)TH1: Xóa xong L còn phần tử: -> xóa cập nhật lại bthuong
+##### ------(L)TH2: Xóa xong L rổng: -> Giải phóng L (Xóa cặp khóa-con trỏ của L trong P)
+##### ------------: - (P)TH1: Xóa xong nếu P thiếu con ( `< ceil(m/2)` )
+##### -------------------: Xét P' bên phải (hoặc trái) cùng mức
+##### -----------------------------: + Nếu P' dư con: ( `> ceil(m/2)` ): share 1 con trái cùng qua P
+##### -----------------------------: + Nếu P' đủ con: ( `= ceil(m/2)` ): share toàn bộ con của P' sang P -> Giải phóng P' (Xóa cặp khóa - con trỏ của P' trong Gốc)
+##### ------------: - (P)TH1: Xóa xong nếu P không thiếu con ( `>= ceil(m/2)` ): thì thôi
+##### ------------: Cập nhật lại khóa B cây
