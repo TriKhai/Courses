@@ -123,6 +123,8 @@
 ##### Tại chổ dừng của L và R: Nếu `L<R` thì hoán vị a[L] và a[R].
 ##### Lặp lại quá trình dịch sang phải, sang trái của 2 "con nháy" L và R cho đến khi `L>R`.
 ##### Khi đó L sẽ là điểm phân hoạch, cụ thể là a[L] là phần tử đầu tiên của mảng con "bên phải"
+- Giải thuật: 
+##### >Để sắp 
 
 # CHAPTER 3:
 
