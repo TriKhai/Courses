@@ -164,8 +164,19 @@
 
 ### Xóa mẫu tin
 #### Phương pháp:
-##### a. Xen r:
-##### ------(a)TH1: L còn chổ: Xen r vào vị trí đúng.
-##### ------(a)TH2: L hết chổ: Xen r vào vị trí đúng.
+##### Xen r:
+##### ------(L)TH1: L còn chổ: Xen r vào vị trí đúng.
+##### ------(L)TH2: L hết chổ: 
+##### ------------: - Cấp nút lá mới l'. 
+##### ------------: - Dời ceil(b/2) của L sang L'. 
+##### ------------: - Xen r vào L hoặc L'. 
+##### ------------: - Xen L' vào nút cha P.
+##### -------------------: (P)TH1: Nếu P còn chổ: Xen L' vào vị trí đúng. 
+##### -------------------: (P)TH2: Nếu P hết chổ:
+##### -----------------------------: + Cấp nút trong mới P'.
+##### -----------------------------: + Dời ceild(m/2) nút lá cuối sang P'.
+##### -----------------------------: + Xen nút lá L' vào P hoặc P'.
+##### -----------------------------: + Xen P' vào nút cha. => đệ quy tới khi nào oke thì thôi.
+
 
 #### Minh họa
