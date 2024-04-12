@@ -134,8 +134,14 @@
 ####
 ![feature-image](./assets/sort/quicksort.png)
 
+### Quick sort biến thể
+### Heap sort
 
 # CHAPTER 3:
 
 
-# CHAPTER 4:
+# CHƯƠNG 4: LƯU TRỮ NGOÀI
+## 1. Định nghĩa và tính chất của B-cây.
+### Định nghĩa
+
+### Tính chất
