@@ -163,6 +163,9 @@
 <br>
 
 ### Xóa mẫu tin
-#### Phương pháp
+#### Phương pháp:
+##### a. Xen r:
+#####       (a)TH1: L còn chổ: Xen r vào vị trí đúng.
+#####       (a)TH2: L hết chổ: Xen r vào vị trí đúng.
 
 #### Minh họa
