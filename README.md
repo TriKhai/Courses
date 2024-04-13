@@ -191,28 +191,49 @@
 
 <hr>
 
-# CHAPTER 3: Kĩ thuật thiết kế thuật toán
+# CHAPTER 3: Kĩ thuật thiết kế thuật toán (Thường dùng giải các bài toán tối ưu tổ hợp)
 ## Ý tưởng, nhận xét ưu, khuyết điểm:
 ### 1. Vét cạn
-- Ý tưởng: Thử tất cả các khả năng xem khả năng nào là nghiệm đúng của bài toán cần giải quyết.
+- Ý tưởng: Thử tất cả các khả năng xem khả năng nào là nghiệm đúng và tối ưu nhất của bài toán cần giải quyết.
 - Ưu điểm: Tìm ra được nghiệm tối ưu nhất, áp dụng cho mọi bài toán.
-- Nhược điểm: Số bước tính toán lớn, tốn thời gian để tìm nghiệm.
+- Nhược điểm: Tốn nhiều thời gian.
 
 ### 2. Chia để trị
-- Ý tưởng: Thử tất cả các khả năng xem khả năng nào là nghiệm đúng của bài toán cần giải quyết.
-- Ưu điểm: Tìm ra được nghiệm tối ưu nhất, áp dụng cho mọi bài toán.
-- Nhược điểm: Số bước tính toán lớn, tốn thời gian để tìm nghiệm.
+- Ý tưởng: Thực hiện chia bài toán thành các bài toán nhỏ hơn và giải các bài toán nhỏ hơn đó. Sau đó, kết hợp nghiệm của các bài toán nhỏ hơn đó thành nghiệm bài toán ban đầu. 
+- Ưu điểm: 
+- Nhược điểm: Việc tách bài toán ra thành các bài toán và việc kết hợp kết quả các bài toán con sẽ khó thực hiện.
+- Nguyên tắc chung: Chia bài toán thành các bài toán con có kích thước xấp xỉ bằng nhau thì hiệu suất sẽ cao hơn.
 
 ### 3. Tham ăn
-- Ý tưởng: Thử tất cả các khả năng xem khả năng nào là nghiệm đúng của bài toán cần giải quyết.
-- Ưu điểm: Tìm ra được nghiệm tối ưu nhất, áp dụng cho mọi bài toán.
-- Nhược điểm: Số bước tính toán lớn, tốn thời gian để tìm nghiệm.
+- Ý tưởng: Đưa ra quyết định dựa ngay vào thông tin đang có, và trong tương lai sẽ
+không xem xét lại tác động của các quyết định trong quá khứ.
+- Ưu điểm: Rất dễ đề xuất, không đòi hỏi nhiều thời gian tính.
+- Nhược điểm: Thường không cho kết quả tối ưu.
 
 ### 4. Nhánh cận
-### 5. Quy hoạch động
-### 6. Quay lui
-### 6. Cắt tỉa alpha, beta
+- Ý tưởng: Thực hiện việc đánh giá theo từng bước, nếu không có khả năng tìm thấy phương án tốt hơn thì cắt nhánh đó, chuyển sang nhánh khác  Phương án tốt dần lên.  Cải tiến của **Vét cạn**. Không xây dựng toàn bộ cây tìm kiếm phương án, mà dùng giá trị cận tại mỗi nút trên cây để hạn chế bớt việc phân nhánh.
+- Ưu điểm: Tìm được phương án tối ưu.
+- Nhược điểm: Cần phải có cách ước lượng cận tốt mới có thể cắt được nhiều nhánh để hạn chế không gian tìm kiếm.
 
+### 5. Quy hoạch động
+- Ý tưởng: **Tạo bảng lưu trữ** kết quả các bài toán con để khi cần sẽ sử dụng mà không cần phải giải lại. ((1)Tạo bảng, (2)Tra bảng)
+- Ưu điểm: Thực hiện nhanh, áp dụng bài toán tối ưu, các bài toán có cthuc truy hồi.
+- Nhược điểm: Không hiệu quả khi. (1)Không tìm được công thức truy hồi. (2)Số lượng bài toán cần giải quyết và lưu trữ là rất lớn. (3)Sự kết hợp lời giải của các bài toán con chưa chắc là lời giải của bài toán ban đầu.
+
+### 6. Quay lui
+- Ý tưởng: 
+##### > Là quá trình phân tích đi xuống và quay lui lại theo đường đã đi qua.
+##### + Tại mỗi bước: vấn đề chưa được giải quyết (do còn thiếu cứ liệu) nên phải phân tích tới các điểm dừng - xác định được lời giải/ xác định được không thể (/không nên) tiếp tục đi. 
+##### + Từ các điểm dừng: quay lui theo đường đã qua để giải quyết các vấn đề tồn đọng  giải quyết vấn đề ban đầu
+#### > Quay lui thường đi với các giải thuật khác như vét cạn(thường), cắt tỉa a-b, Nhánh cận
+- Ưu điểm: 
+- Nhược điểm: 
+
+### 6. Cắt tỉa alpha, beta
+##### alpha-cut
+![feature-image](./assets/sort/aCut.png).
+##### beta-cut
+![feature-image](./assets/sort/bCut.png).
 <hr>
 
 # CHƯƠNG 4: LƯU TRỮ NGOÀI
