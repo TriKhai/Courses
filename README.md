@@ -286,7 +286,7 @@ không xem xét lại tác động của các quyết định trong quá khứ.
 
 
 # CÁC DẠNG BÀI TẬP THI:
-1. So sánh độ phứt tạp. (**C1**)
+**1. So sánh độ phứt tạp.** (**C1**)
 2. Tính độ phứt tạp: (**C1**)
 - Chương trình không có đệ quy(Dựa trên đoạn chương trình cho trước).
 - Chương trình có đệ quy(Thành lập ptrinh và giả bằng truy hồi/lời gọi tổng quát).
