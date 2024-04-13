@@ -158,7 +158,7 @@
 ##### ---------: a[i] có con trái a[2i+1], con phải a[2i+2].
 ##### ---------: Nút trong(a[0]....a[(n-2)/2]) đều có 2 con. (Trừ a[(n-2)/2] có thể có 1 con nếu n chẵn).
 ##### (1): Tạo Heap ban đầu:
-##### ---------: Loop((N-2)/2 -> 0) :(chạy cho đến khi còn 2 nút).
+##### ---------: Loop((N-2)/2 -> 0).
 ##### ------------------: a[(N-2)/2]...a[0]: Gọi PushDown.
 ##### (2): Sắp xếp cây HEAP:
 ##### ---------: Loop(N-1 -> 2) (chạy cho đến khi còn 2 nút).
@@ -191,7 +191,27 @@
 
 <hr>
 
-# CHAPTER 3:
+# CHAPTER 3: Kĩ thuật thiết kế thuật toán
+## Ý tưởng, nhận xét ưu, khuyết điểm:
+### 1. Vét cạn
+- Ý tưởng: Thử tất cả các khả năng xem khả năng nào là nghiệm đúng của bài toán cần giải quyết.
+- Ưu điểm: Tìm ra được nghiệm tối ưu nhất, áp dụng cho mọi bài toán.
+- Nhược điểm: Số bước tính toán lớn, tốn thời gian để tìm nghiệm.
+
+### 2. Chia để trị
+- Ý tưởng: Thử tất cả các khả năng xem khả năng nào là nghiệm đúng của bài toán cần giải quyết.
+- Ưu điểm: Tìm ra được nghiệm tối ưu nhất, áp dụng cho mọi bài toán.
+- Nhược điểm: Số bước tính toán lớn, tốn thời gian để tìm nghiệm.
+
+### 3. Tham ăn
+- Ý tưởng: Thử tất cả các khả năng xem khả năng nào là nghiệm đúng của bài toán cần giải quyết.
+- Ưu điểm: Tìm ra được nghiệm tối ưu nhất, áp dụng cho mọi bài toán.
+- Nhược điểm: Số bước tính toán lớn, tốn thời gian để tìm nghiệm.
+
+### 4. Nhánh cận
+### 5. Quy hoạch động
+### 6. Quay lui
+### 6. Cắt tỉa alpha, beta
 
 <hr>
 
