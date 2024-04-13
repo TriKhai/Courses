@@ -138,7 +138,28 @@
 ![feature-image](./assets/sort/quicksort.png)
 
 ### Quick sort biến thể
+##### Chọn chốt là khóa của phần tử `nhỏ nhất` trong 2 phần tử khóa khác nhau đầu tiên từ trái qua.
+- Các phần tử bên trái: L <= v (v là chốt).
+- Các phần tử bên phải: R > v 
+##### Minh họa:
+![feature-image](./assets/sort/quicksortbienthe.png.png)
+
+##### So sánh QuickSort và QuickSort biến thể:
+- Quick sort    : `L <  v`   `v:>,2,!=`  `R >= v` 
+- Quick sort bt : `L <= v`   `v:<,2,!=`  `R >  v`
+
 ### Heap sort
+- Quy tắc pushdown:
+
+
+
+
+- Minh họa:
+##### 1. Tree (Không thi). -> vẽ cây
+##### 2. Array (Thi). -> kẻ bảng
+
+
+
 
 <hr>
 
@@ -188,7 +209,7 @@
 ##### ------(L)TH2: Xóa xong L rổng: -> Giải phóng L (Xóa cặp khóa-con trỏ của L trong P)
 ##### ------------: - (P)TH1: Xóa xong nếu P thiếu con ( `< ceil(m/2)` )
 ##### -------------------: Xét P' bên phải (hoặc trái) cùng mức
-##### -----------------------------: + Nếu P' dư con: ( `> ceil(m/2)` ): share 1 con trái cùng qua P
-##### -----------------------------: + Nếu P' đủ con: ( `= ceil(m/2)` ): share toàn bộ con của P' sang P -> Giải phóng P' (Xóa cặp khóa - con trỏ của P' trong Gốc)
-##### ------------: - (P)TH1: Xóa xong nếu P không thiếu con ( `>= ceil(m/2)` ): thì thôi
-##### ------------: Cập nhật lại khóa B cây
+##### -----------------------------: + Nếu P' dư con: ( `> ceil(m/2)` ): share 1 con trái cùng qua P.(Nếu P' bên trái thì share phải cùng).
+##### -----------------------------: + Nếu P' đủ con: ( `= ceil(m/2)` ): share toàn bộ con của P' sang P -> Giải phóng P' (Xóa cặp khóa - con trỏ của P' trong Gốc).
+##### ------------: - (P)TH2: Xóa xong nếu P không thiếu con ( `>= ceil(m/2)` ): thì thôi
+##### ------------: Cập nhật lại khóa B cây.
