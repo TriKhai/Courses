@@ -14,6 +14,12 @@
 
 ## 2. Chương trình không có đệ quy (QTC, QTN)
 - Tính độ phút tạp dựa trên code
+##### Quy tắc cộng: O(max(a, b))
+##### Quy tắc nhân: O(a*b)
+##### Vòng lặp mẹo tính: O(đk dừng - khởi tạo + 1)
+```
+vd: for i=1 to n do.... thì O(n - 1 + 1) = O(n)
+```
 
 ## 3. Chương trinhg có đệ quy(Truy hồi/Tổng quát)
 - Thành lập phtrinh và tính độ phứt tạp
@@ -295,4 +301,4 @@ không xem xét lại tác động của các quyết định trong quá khứ.
 ### 4. Cái ba lô bằng **Nhánh cận** và **Tham ăn**. (**C3**).
 ### 5. Cắt tỉa và định trị cây trò chơi. (**C3**).
 - Lưu ý: *Dạng bài cắt tỉa nhớ vẽ hình quy tắc Cắt tỉa*.
-### 6. Xen, Xóa cho blanced-tree. (**C4**). 
+### 6. Xen, Xóa cho balanced-tree. (**C4**). 
