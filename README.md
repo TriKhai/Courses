@@ -287,12 +287,12 @@ không xem xét lại tác động của các quyết định trong quá khứ.
 
 # CÁC DẠNG BÀI TẬP THI:
 **1. So sánh độ phứt tạp.** (**C1**)
-2. Tính độ phứt tạp: (**C1**)
+**2. Tính độ phứt tạp: **(**C1**)
 - Chương trình không có đệ quy(Dựa trên đoạn chương trình cho trước).
 - Chương trình có đệ quy(Thành lập ptrinh và giả bằng truy hồi/lời gọi tổng quát).
-3. Thực hiện kẻ bảng sắp xếp dãy số bằng các thuật toán(**C2**).
+**3. Thực hiện kẻ bảng sắp xếp dãy số bằng các thuật toán**(**C2**).
 - Lưu ý: *Dạng bài HeapSort trình bày dạng mảng và vẽ hình quy tắc PushDown*.
-4. Cái ba lô bằng **Nhánh cận** và **Tham ăn**. (**C3**).
-5. Cắt tỉa và định trị cây trò chơi. (**C3**).
+**4. Cái ba lô bằng **Nhánh cận** và **Tham ăn**.** (**C3**).
+**5. Cắt tỉa và định trị cây trò chơi**. (**C3**).
 - Lưu ý: *Dạng bài cắt tỉa nhớ vẽ hình quy tắc Cắt tỉa*.
-6. Xen, Xóa cho blanced-tree. (**C4**). 
+**6. Xen, Xóa cho blanced-tree.** (**C4**). 
