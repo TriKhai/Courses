@@ -239,7 +239,7 @@ không xem xét lại tác động của các quyết định trong quá khứ.
 # CHƯƠNG 4: LƯU TRỮ NGOÀI
 ## 1. Định nghĩa và tính chất của B-cây.(Balanced tree)
 ### Định nghĩa: B-tree bậc m là `Cây tìm kiếm m phân cân bằng`.
-#### `m`: số con tối đa của nút trong.
+#### `m`: số con tối đa của nút (trừ nút lá).
 #### `b`: số mẫu tin tối đa của nút lá.
 
 ### Tính chất(4):
