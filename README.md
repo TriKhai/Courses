@@ -152,7 +152,7 @@
 #### + Heap: là cây sắp xếp thứ tự bộ phận (Cây nhị phân, giá trị nút (khác nút lá) nhỏ hơn giá trị các nút con của nó).
 #### + Nhận xét: `Nút gốc` có giá trị nhỏ nhât, Heap không phải `cây tìm kiếm nhị phân`.
 
-#### Thuật toán: 
+#### Thuật toán: (2)Convert arr->BinaryTree & Convert BinTree->Heap
 ##### B1: Xem mảng là cây nhị phân:
 ##### ---------: a[0] là nút gốc.
 ##### ---------: a[i] có con trái a[2i+1], con phải a[2i+2].
@@ -172,13 +172,18 @@
 ![feature-image](./assets/sort/th2PushDown.png).
 ##### -------: TH2: Nếu a[first] chỉ có `khóa > khóa con phải` và `khóa con phải < khóa con trái` thì hoán đổi a[first] & a[con phải]. Sau đó pushdown tiếp con phải.
 ![feature-image](./assets/sort/th3PushDown.png).
+<br>
 
+##### 3 TH trong 1 hình:
+![feature-image](./assets/sort/th123PushDown.png).
 
 
 - Minh họa:
+![feature-image](./assets/sort/btvdHeapSort1.png).
 ##### 1. Tree (Không thi). -> vẽ cây
+![feature-image](./assets/sort/btvdHeaoSortTree.png).
 ##### 2. Array (Thi). -> kẻ bảng
-
+![feature-image](./assets/sort/btvdHeapSortArr.png).
 
 <hr>
 
