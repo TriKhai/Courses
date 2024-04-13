@@ -153,14 +153,18 @@
 #### + Nhận xét: `Nút gốc` có giá trị nhỏ nhât, Heap không phải `cây tìm kiếm nhị phân`.
 
 #### Thuật toán: (2)Convert arr->BinaryTree & Convert BinTree->Heap
-##### B1: Xem mảng là cây nhị phân:
+##### (*): Xem mảng là cây nhị phân:
 ##### ---------: a[0] là nút gốc.
 ##### ---------: a[i] có con trái a[2i+1], con phải a[2i+2].
 ##### ---------: Nút trong(a[0]....a[(n-2)/2]) đều có 2 con. (Trừ a[(n-2)/2] có thể có 1 con nếu n chẵn).
-##### B2: Sắp xếp cây HEAP: Thủ tục PushDown.
-##### B3: Hoán đổi nút gốc a[0] cho nút lá cuối.
-##### B4: Sắp xếp lại cây sau khi đã bỏ nút lá cuối thành HEAP mới dùng PushDown -> Lặp lại B3 & B4 cho đến khi cây chỉ còn 2 nút.
-##### => 2 nút này và các nút lá bỏ ra tạo thành thứ tự giãm dần.
+##### (1): Tạo Heap ban đầu:
+##### ---------: Loop((N-2)/2 -> 0) :(chạy cho đến khi còn 2 nút).
+##### ------------------: a[(N-2)/2]...a[0]: Gọi PushDown.
+##### (2): Sắp xếp cây HEAP:
+##### ---------: Loop(N-1 -> 2) (chạy cho đến khi còn 2 nút).
+##### ------------------: Swap(a[0], a[i]).
+##### ------------------: PushDown: a[0] của cây con a[0]....a[i-1]
+##### (3): Swap(a[0], a[1])
 
 - Quy tắc pushdown:
 ##### Nhận 2 tham số là **first** và **last** để đẩy nút **first** xuống.
