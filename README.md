@@ -142,7 +142,7 @@
 - Các phần tử bên trái: L <= v (v là chốt).
 - Các phần tử bên phải: R > v 
 ##### Minh họa:
-![feature-image](./assets/sort/quicksortbienthe.png.png)
+![feature-image](./assets/sort/quicksortbienthe.png)
 
 ##### So sánh QuickSort và QuickSort biến thể:
 - Quick sort    : `L <  v`   `v:>,2,!=`  `R >= v` 
