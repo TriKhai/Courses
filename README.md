@@ -29,7 +29,8 @@ vd: for i=1 to n do.... thì O(n - 1 + 1) = O(n)
 ##### -------: (*)TH1: a > d(b): => T(n) = O(n^logb(a))
 ##### -------: (*)TH1: a < d(b): => T(n) = O(n^logb(d(b)))
 ##### -------: (*)TH1: a = d(b): => T(n) = O(n^logb(a) * logb(n))
-##### THư: Nếu d(n) không là hàm nhân -> Tính ên đi đm
+![feature-image](./assets/optimize/loigiaitongquat1.png)
+##### TH2: Nếu d(n) không là hàm nhân -> Tính ên đi đm
 
 <hr>
 
