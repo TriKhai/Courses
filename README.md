@@ -149,16 +149,35 @@
 - Quick sort bt : `L <= v`   `v:<,2,!=`  `R >  v`
 
 ### Heap sort
-- Quy tắc pushdown:
+#### + Heap: là cây sắp xếp thứ tự bộ phận (Cây nhị phân, giá trị nút (khác nút lá) nhỏ hơn giá trị các nút con của nó).
+#### + Nhận xét: `Nút gốc` có giá trị nhỏ nhât, Heap không phải `cây tìm kiếm nhị phân`.
 
+#### Thuật toán: 
+##### B1: Xem mảng là cây nhị phân:
+##### ---------: a[0] là nút gốc.
+##### ---------: a[i] có con trái a[2i+1], con phải a[2i+2].
+##### ---------: Nút trong(a[0]....a[(n-2)/2]) đều có 2 con. (Trừ a[(n-2)/2] có thể có 1 con nếu n chẵn).
+##### B2: Sắp xếp cây HEAP: Thủ tục PushDown.
+##### B3: Hoán đổi nút gốc a[0] cho nút lá cuối.
+##### B4: Sắp xếp lại cây sau khi đã bỏ nút lá cuối thành HEAP mới dùng PushDown -> Lặp lại B3 & B4 cho đến khi cây chỉ còn 2 nút.
+##### => 2 nút này và các nút lá bỏ ra tạo thành thứ tự giãm dần.
+
+- Quy tắc pushdown:
+##### Nhận 2 tham số là **first** và **last** để đẩy nút **first** xuống.
+##### Giả sử cây a[first],...a[last] đã đúng vị trí của một HEAP trừ a[first]: PushDown sẽ đẩy a[first] xuống đúng vị trí của nó trong cây.
+##### Khả năng có thể của a[first].
+##### -------: TH1: Nếu a[first] chỉ có `1 con trái` là lá & `khóa > khóa con trái` thì hoán đổi a[first] & a[con trái].
+![feature-image](./assets/sort/th1PushDown.png).
+##### -------: TH2: Nếu a[first] chỉ có `khóa > khóa con trái` và `khóa con trái <= khóa con phải` thì hoán đổi a[first] & a[con trái]. Sau đó pushdown tiếp con trái.
+![feature-image](./assets/sort/th2PushDown.png).
+##### -------: TH2: Nếu a[first] chỉ có `khóa > khóa con phải` và `khóa con phải < khóa con trái` thì hoán đổi a[first] & a[con phải]. Sau đó pushdown tiếp con phải.
+![feature-image](./assets/sort/th3PushDown.png).
 
 
 
 - Minh họa:
 ##### 1. Tree (Không thi). -> vẽ cây
 ##### 2. Array (Thi). -> kẻ bảng
-
-
 
 
 <hr>
