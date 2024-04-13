@@ -295,4 +295,4 @@ không xem xét lại tác động của các quyết định trong quá khứ.
 ### 4. Cái ba lô bằng **Nhánh cận** và **Tham ăn**. (**C3**).
 ### 5. Cắt tỉa và định trị cây trò chơi. (**C3**).
 - Lưu ý: *Dạng bài cắt tỉa nhớ vẽ hình quy tắc Cắt tỉa*.
-### 6. Xen, Xóa cho blanced-tree. (**C4**). 
+### 6. Xen, Xóa cho balanced-tree. (**C4**). 
