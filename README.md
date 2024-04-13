@@ -22,7 +22,15 @@ vd: for i=1 to n do.... thì O(n - 1 + 1) = O(n)
 ```
 
 ## 3. Chương trinhg có đệ quy(Truy hồi/Tổng quát)
-- Thành lập phtrinh và tính độ phứt tạp
+- Thành lập phtrinh:
+- Tính: 
+##### Dạng PTrình đệ quy TQ: T(n) = aT(n/b)+d(n)
+##### TH1: Nếu d(n) là hàm nhân(all trừ hàm có logarit)
+##### -------: (*)TH1: a > d(b): => T(n) = O(n^logb(a))
+##### -------: (*)TH1: a < d(b): => T(n) = O(n^logb(d(b)))
+##### -------: (*)TH1: a = d(b): => T(n) = O(n^logb(a) * logb(n))
+##### THư: Nếu d(n) không là hàm nhân -> Tính ên đi đm
+
 <hr>
 
 # CHƯƠNG 2: SẮP XẾP
