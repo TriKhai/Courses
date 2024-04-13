@@ -282,3 +282,17 @@ không xem xét lại tác động của các quyết định trong quá khứ.
 ##### -----------------------------: + Nếu P' đủ con: ( `= ceil(m/2)` ): share toàn bộ con của P' sang P -> Giải phóng P' (Xóa cặp khóa - con trỏ của P' trong Gốc).
 ##### ------------: - (P)TH2: Xóa xong nếu P không thiếu con ( `>= ceil(m/2)` ): thì thôi
 ##### ------------: Cập nhật lại khóa B cây.
+
+
+
+# CÁC DẠNG BÀI TẬP THI:
+1. So sánh độ phứt tạp. (**C1**)
+2. Tính độ phứt tạp: (**C1**)
+- Chương trình không có đệ quy(Dựa trên đoạn chương trình cho trước).
+- Chương trình có đệ quy(Thành lập ptrinh và giả bằng truy hồi/lời gọi tổng quát).
+3. Thực hiện kẻ bảng sắp xếp dãy số bằng các thuật toán(**C2**).
+- Lưu ý: *Dạng bài HeapSort trình bày dạng mảng và vẽ hình quy tắc PushDown*.
+4. Cái ba lô bằng **Nhánh cận** và **Tham ăn**. (**C3**).
+5. Cắt tỉa và định trị cây trò chơi. (**C3**).
+- Lưu ý: *Dạng bài cắt tỉa nhớ vẽ hình quy tắc Cắt tỉa*.
+6. Xen, Xóa cho blanced-tree. (**C4**). 
