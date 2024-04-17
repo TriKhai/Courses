@@ -98,14 +98,13 @@ void Greedy(Canh arr[], int vertex, int size, Canh PA[]) {
 	int i;
 	int j=0;
 	for(i=0; i<size && j<vertex-1; i++) {
-		
 		r_dau = findRoot(parent, arr[i].dau);
 		r_cuoi = findRoot(parent, arr[i].cuoi);
 		if(!dinhCap3(PA, size, arr[i]) && 
 		!chutrinh(r_dau, r_cuoi)) {
 			PA[j++] = arr[i];
 			updateForest(parent, r_dau, r_cuoi);
-		}	
+		}
 	}
 	
 	for(; i<size; i++) {
@@ -131,7 +130,6 @@ int printDataWithName(Canh arr[], int size) {
 }	
 	
 int main() {
-	
 	Canh arr[50];
 	Canh PA[50];
 	int size = 0, vertex = 0;
@@ -139,15 +137,12 @@ int main() {
 	printf("Danh sach chua xep:\n");
 	printf("size: %d, vertex: %d\n", size, vertex);
 	printData(arr, size);
-	
 	printf("\nDanh sach da xep:\n");
 	BubleSort(arr, size);
 	printData(arr, size);
-	
 	printf("\nDuong di:\n");
 	Greedy(arr, vertex, size, PA);
 	int sumLength = printDataWithName(PA, vertex);
 	printf("Tong do dai: %d", sumLength);
-	
 	return 0;
 }
