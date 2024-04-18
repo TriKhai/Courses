@@ -26,8 +26,14 @@
 ## 2. DFS (STACK)
 ## 3. DFS (RECURSE)
 ## 4. DFS (RECURSE phiên bản đặc biệt cảm lạnh)
+- Điều kiện ngoài vòng lặp (đỉnh nào xét rồi kh ghi).
+- Điều kiện trong vòng lặp (đỉnh nào xét rồi vẫn ghi).
 
 # Tuàn 3: Tính liên thông của đồ thị
+## 1. for + DFS = Duyệt all đỉnh.
+## 2. Tarjan tìm bộ phận liên thông của đồ thị có hướng (Ví dụ) => Dễ nhầm minnum, num :<
+
+
 # Tuần 4: Tính liên thông và ứng dụng
 # Tuần 5: Đường đi ngắn nhât
 # Tuần  : Thứ tự topo
