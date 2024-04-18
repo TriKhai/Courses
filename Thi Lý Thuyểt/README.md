@@ -52,5 +52,10 @@
 
 
 # Tuần  : Cây (Kruskal, Prim)
+- Kruskal cơ bản
+- Kruskal nâng cao (BPLT)
+- Prim
+
+/// mAI
 # Tuần  : Cây (Chu-liu/edmonds).
 # Tuần  : Luồng cực đại.
