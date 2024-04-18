@@ -21,7 +21,7 @@
 
 ##### *Lưu ý đối với có hướng bậc ra tính là 1 á , 1 ra 2 thì 2 là láng giềng còn 2 ra 1 thì 2 không là láng giềng của.*
 
-# Tuần 2: Duyệt đồ thị
+# Tuần 2: DUYỆT ĐỒ THỊ (cần làm lại 2)
 ## 1. BFS (QUEUE)
 ## 2. DFS (STACK)
 ## 3. DFS (RECURSE)
@@ -29,14 +29,28 @@
 - Điều kiện ngoài vòng lặp (đỉnh nào xét rồi kh ghi).
 - Điều kiện trong vòng lặp (đỉnh nào xét rồi vẫn ghi).
 
-# Tuàn 3: Tính liên thông của đồ thị
+# Tuàn 3: TÍNH LIÊN THÔNG CỦA ĐỒ THỊ (cần làm lại 1)
 ## 1. for + DFS = Duyệt all đỉnh.
-## 2. Tarjan tìm bộ phận liên thông của đồ thị có hướng (Ví dụ) => Dễ nhầm minnum, num :<
+## 2. Tarjan tìm bộ phận liên thông của đồ thị có hướng => Dễ nhầm minnum, num :<
+## 3. Kiểm tra đồ thị(có hướng/vô hướng) có chu trình hay không? (WHITE/GRAY/BLACK).
+## 4. Kiểm tra đồ thị phân đôi (RED/BLUE).
 
+# Tuần 4: ĐƯỜNG ĐI NGẮN NHẤT (cần làm lại 3)
+## 1. Biểu diễn đồ thị bằng phương pháp **ma trận trọng số**.(có/vô hướng)
+## 2. Biểu diễn đồ thị bằng phương pháp **danh sách cung**.(có/vô hướng)
+## 3. Tìm đường đi ngắn nhất bằng Moore Dijkstra.(có/vô hướng)
+## 4. Moore Dijkstra trực tiếp trên đồ thị.(có/vô hướng)
 
-# Tuần 4: Tính liên thông và ứng dụng
-# Tuần 5: Đường đi ngắn nhât
 # Tuần  : Thứ tự topo
-# Tuần  : Cây
-# Tuần  : Cây (tiếp theo).
+## 1. Liệt kê thứ tự topo: 
+- Với mọi cung (u, v) sao cho u đứng trước v (liệt kê thứ tự topo).
+
+## 2. Xếp hạng đồ thị
+- Hạng của u, ký hiệu là rank[u] là số cung nhiều nhất của 1 đường đi từ gốc đến u.
+
+## 3. Quản lí dự án
+
+
+# Tuần  : Cây (Kruskal, Prim)
+# Tuần  : Cây (Chu-liu/edmonds).
 # Tuần  : Luồng cực đại.
