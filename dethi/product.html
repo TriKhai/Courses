@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
+</head>
+
+<style>
+    
+
+</style>
+
+<body>
+    <header>
+        <div id="coleft">
+            <nav>
+                <p><a href="product.html">Nhập hàng</a> | <a href="#">Đăng nhập</a></p>
+            </nav>
+            <img src="./img/coleft.webp" alt="">
+        </div>
+        <div id="coright">
+            <img src="./img/coright1.webp" alt="">
+            <img src="./img/coright2.webp" alt="">
+        </div>
+    </header>
+    <main>
+        <form action="" onsubmit="reg(this)">
+            <div class="containerThongTinSV">
+                <h3 class="titleBox">Nhập hàng hóa</h3>
+                <table>
+                    <tr>
+                        <td class="keySV">Ngành hàng: </td>
+                        <td class="valueSV">
+                            <select id="selec" name="selectBtx" required>
+                                <option value="" disabled selected>--Chọn--</option>
+                                <option value="">Điện tử</option>
+                                <option value="">Gia dụng</option>
+                                <option value="">Thời trang</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="keySV">Tên hàng: </td>
+                        <td class="valueSV">
+                            <input type="text" name="inputTenHang" id="inputTenHang" placeholder="Từ 2 đến 20 kí tự" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="keySV">Số lượng: </td>
+                        <td class="valueSV">
+                            <input type="text" name="inputSoluong" id="inputSoluong" placeholder=">=10" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="keySV">Ngày nhập: </td>
+                        <td class="valueSV">
+                            <input type="date" name="" id="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="keySV"></td>
+                        <td class="valueSV">
+                            <button class="btnNhapHang">Lưu</button>
+                            <button class="btnNhapHang">Hủy</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+        
+    </main>
+    <footer>
+        <h3>Copyright &copy; 2023</h3>
+    </footer>
+</body>
+</html>
