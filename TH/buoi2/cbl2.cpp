@@ -1,86 +1,83 @@
 #include <stdio.h>
-
+#define min(a, b) (a>b?b:a);
 typedef struct {
-	int gi, vi, sl ,PA = 0;
-	float dg;
-	char name[50];
-} Product;
+    int g, v, PA, sl;
+    float dg;
+    char ten[50];
+} item;
 
-void ReadData(Product arr[], int *w, int *size) {
-	FILE *f;
-	f = fopen("CaiBalo2.txt", "r");
-	fscanf(f, "%d", w);
-	if(f==NULL) {
-		printf("Loi mo file!\n");
-		return;
-	}
-	int i=0;
-	while(!feof(f)) {
-		fscanf(f, "%d%d%d%[^\n]",
-		&arr[i].gi, &arr[i].vi, &arr[i].sl, &arr[i].name);
-		arr[i].dg = (float)arr[i].vi/arr[i].gi;
-		i++;
-	}
-	*size = i;
-	fclose(f);
+void READFILE(item arr[], int *size, int *W) {
+    int n=0, m;
+    FILE *f = fopen("CaiBalo2.txt", "r");
+    fscanf(f, "%d", &m);
+    while(!feof(f)) {
+        fscanf(f, "%d%d%d%[^\n]", &arr[n].g, &arr[n].v, &arr[n].sl, &arr[n].ten);
+        arr[n].dg = (float)arr[n].v/arr[n].g;
+        arr[n].PA=0;
+        n++;
+    }
+    (*size)=n;
+    (*W)=m;
+    fclose(f);
 }
 
-void printData(Product arr[], int size) {
-	for(int i=0; i<size; i++) {
-		printf("%d %d %d %s %d %.2f\n", arr[i].gi, arr[i].vi, arr[i].sl, arr[i].name, arr[i].PA, arr[i].dg);
-	}
+void PRINT(item arr[], int n, int W) {
+    printf("%d\n", W);
+    int i;
+    for(i=0; i<n; i++) {
+        printf("%d %d %d %s %.2f\n",
+		 arr[i].g, arr[i].v, arr[i].sl, arr[i].ten, arr[i].dg);
+    }
+}	
+
+void swap(item *x, item *y) {
+    item tmp = *x;
+    *x = *y;
+    *y = tmp;
 }
 
-void printPricePerWeigth(Product arr[], int size) {
-	for(int i=0; i<size; i++) {
-		printf("%s %d\n", arr[i].name, arr[i].PA);
-	}
+void bbsort(item arr[], int n) {
+    int i, j;
+    for(i=0; i<n-1; i++) {
+        for(j=n-1; j>i; j--) {
+            if(arr[j].dg > arr[j-1].dg) {
+                swap(&arr[j], &arr[j-1]);
+            }
+        }
+    }
 }
 
-void swap(Product *x, Product *y) {
-	Product temp = *x;
-	*x = *y;
-	*y = temp;
+void greedy(item arr[], int n, int W) {
+    int i=0;
+    for(i=0; i<n; i++) {
+        arr[i].PA = min(arr[i].sl, W/arr[i].g);
+        W-=arr[i].g*arr[i].PA;
+    }
 }
 
-void BubleSort(Product arr[], int size) {
-	for(int i=0; i<size-1; i++) {
-		for(int j=size-1; j>=i+1; j--) {
-			if(arr[j].dg > arr[j-1].dg) {
-				swap(&arr[j], &arr[j-1]);
-			}
-		}
-	} 
-}
+void printPA(item arr[], int n, int W) {
+    int sum = 0;
+    int i;
+    for(i=0; i<n; i++) {
+        printf("PA = %d\n", arr[i].PA);
+        sum+=arr[i].PA*arr[i].v;
+        W -= arr[i].PA*arr[i].g;
+    }
 
-int greedy(Product arr[], int size, int w) {
-	int i=0, curWeigth = w, sumValue = 0, amount = 0;
-	while(i<size && curWeigth>0) {
-		if(curWeigth >= arr[i].gi) {
-			arr[i].PA = (curWeigth/arr[i].gi > arr[i].sl)?arr[i].sl:curWeigth/arr[i].gi;
-			curWeigth -= arr[i].PA*arr[i].gi;
-			sumValue += arr[i].PA*arr[i].vi;
-		} 
-		i++;
-	}
-	return sumValue;
+    printf("sum value = %d\n", sum);
+    printf("w con lai = %d\n", W);
 }
 
 int main() {
-	Product products[50];
-	int w, size=0;
-	printf("Init:\n");
-	ReadData(products, &w, &size);
-	printData(products, size);
-	
-	printf("\nSorted:\n");
-	BubleSort(products, size);
-	printData(products, size);
-//	
-	printf("greedy\n");
-	int sumValue = greedy(products, size, w);
-	printPricePerWeigth(products, size);
-	printf("%d ", sumValue);
-
-	return 0;
+    item arr[50];
+    int n, W;
+    READFILE(arr, &n, &W);
+    PRINT(arr, n, W);
+    bbsort(arr, n);
+    printf("\nsorrt\n");
+    PRINT(arr, n, W);
+    printf("\ngreedy\n");
+    greedy(arr, n, W);
+    printPA(arr, n, W);
+    return 0;
 }
