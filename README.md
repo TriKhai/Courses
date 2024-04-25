@@ -158,3 +158,63 @@
 - không share
 
 #### 2. Tiến trình cha/con tiến trình nào kết thúc trước?
+
+# CHAPTER 4: CPU SCHEDULING
+### CPU Burst: khoảng thời gian chiếm dụng CPU
+
+### 2 Dạng định thời
+- non-preemptive: không trưng dụng
+- preemptive: trưng dụng
+
+- Độ trễ điều phối: Dispath latency
+
+### Turnround time: Tính từ khi tiến trình đến hệ thống cho đến khi hoàn thành xong công việc.
+### Waiting time: Tổng thời gian 1 tiến trình ở trong hàng đợi ready
+### Response time: Thời gian lần đầu được gọi.
+
+### Các thuật toán
+- FIFS (không trưng dụng): tiến trình ciheems dụng cho đến xong
+- SJF (trưng dụng/không trưng dụng): tiến trình CPU time nhỏ làm trước
+- PS (trưng dụng/không trưng dụng): Xét theo độ ưu tiên
+- RR (trưng dụng): : Xét mỗi lần chỉ dùng q CPU time
+
+# CHAPTER 5: 
+### ĐK tranh đua: 2 hay nhiều tiến trình đồng thồi tác động lên vùng dùng chung chia sẽ-> kg = cuối cùng
+### Miền tương trục là miền xãy ra đk tranh đua
+
+# CHAPTER 6: DEADLOCk
+### Banker's Algorithrm
+- B1 work = available
+- B2 Xet Need(p)<=work> -> work + allocation(p)
+##### **Nếu có request p**
+- Xét xem request <= need(p) => nếu sai thì lỗi
+- Xét xem request <= available => nếu sai thì đợi cấp đủ tài nguyên
+- ĐK đúng: update 
+- (o) available += request;
+- (o) allocation += request;
+- (o) need += request;
+- Sau đó làm như trên là OKE
+
+### Detection Algorithrm
+- B1: Request < work -> Sai thì có deadlock
+- B2: work+=request
+
+# CHAPTER 7: MAIN MEMORY
+
+### Các khái niệm
+- Hole - block of avalable memory
+
+### Cấp phát vùng nhớ (BÀI TẬP)
+- FIRST_FIT (đủ là cấp, đi theo thứ tự)
+- BEST_FIT (đủ và dung lượng nhỏ nhất, đi theo thứ tự)
+- WORST-FIT (đủ và dung lượng lớn nhất, đi theo thứ tự)
+
+### Fragmentation (Phân mãnh)
+- Phân mảnh ngoài: Còn đủ bộ nhớ cấp phát đó nhưng mà nó rời rạc (VD: 500kb nhưng chia thàng 3 vùng 100kb 200kb 200kb,...)
+- Phân mảnh trong: Tiến trình yêu cầu mà mình cấp *hơn chút xíu* (VD: yêu cầu 300kb mà đang có 302kb thì cấp luôn 302 để đỡ quản lí 2kb thừa thải và hầu như không sài tới).
+
+### Segmentation Architecture
+- (o) Base (số đầu tiên - số ghế muốn ngồi)
+- (o) Limit (giới hạn - giới hạn bao nhiêu ghế)
+- (o) Base <= Địa chỉ hợp lệ < Base+Limit
+- ![alt text](./img/image.png)
